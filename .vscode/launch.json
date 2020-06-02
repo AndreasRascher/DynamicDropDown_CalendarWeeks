@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "NAV2018 (Recreate)",
+            "server": "http://nav2018/",
+            "serverInstance": "NAV",
+            "authentication": "UserPassword",
+            "startupObjectId": 50100,
+            "port": 7049,
+            "schemaUpdateMode": "Recreate"
+        }
+        ]
+}
