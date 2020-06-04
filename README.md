@@ -10,9 +10,9 @@ Dynamic drop down dialog - Calendar Weeks (Number,From,To) - written in AL
 
 
 # HOWTO create a customized dropdown dialog
-## 1. Create a table (e.g. DateDropDown) with at least number of columns you want do display
-- don't forget to specify the needed DropDown Fieldgroup
-
+## 1. Create a table (e.g. DateDropDown) 
+### - Primary Key Field Datatype must match the pagefield datatype
+### - specify the dropdown fields
         fieldgroups
         {
             fieldgroup(DropDown; "Period Name","Period Start","Period End") {}
@@ -21,7 +21,7 @@ Dynamic drop down dialog - Calendar Weeks (Number,From,To) - written in AL
     PageType = List;
     SourceTable = DateDropDown;
     SourceTableTemporary = true;
-## 3. Write Code to fill the DropDown
+## 3. Write Code (trigger OnOpenPage()) to fill the DropDown
 ## 4. Create a page field and assign your dropdown listpage
          field(WeekNo; WeekNo)
                         {
