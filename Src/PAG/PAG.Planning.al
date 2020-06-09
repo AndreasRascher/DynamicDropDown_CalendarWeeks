@@ -91,8 +91,12 @@ page 50100 "Planning"
 
     procedure UpdateTableRelationDateFilter()
     begin
-        rec.setfilter("Due Date Filter",StrSubstNo('%1..%2',DMY2Date(1,1,FromYear),DMY2Date(31,12,FromYear)));
-        rec.SetFilter("Due Next Week Filter",StrSubstNo('%1..%2',DMY2Date(1,1,ToYear),DMY2Date(31,12,ToYear)));
+        rec.setfilter("Due Date Filter",StrSubstNo('%1..%2',
+            Calcdate('<-CW>',DMY2Date(1,1,FromYear)),
+            Calcdate('<CW>',DMY2Date(31,12,FromYear))));
+        rec.SetFilter("Due Next Week Filter",StrSubstNo('%1..%2',
+            Calcdate('<-CW>',DMY2Date(1,1,ToYear)),
+            Calcdate('<CW>',DMY2Date(31,12,ToYear))));
     end;
 
     var
