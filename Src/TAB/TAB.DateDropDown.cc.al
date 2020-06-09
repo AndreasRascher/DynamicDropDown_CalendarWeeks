@@ -29,6 +29,10 @@ table 50100 DateDropDown
         {
             Clustered = true;
         }
+        // required for dropdown filtering oninput
+        key("PeriodName";"Period Name")
+        {
+        }
     }
 
     fieldgroups
